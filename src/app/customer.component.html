@@ -1,0 +1,28 @@
+﻿
+<div class="row form-group" *ngIf="model">
+    <div class="col-md-3">
+        <input class="form-control" type="text" [(ngModel)]="model.firstName" placeholder="First Name"/>
+    </div>
+    <div class="col-md-3">
+        <input class="form-control" type="text" [(ngModel)]="model.lastName" placeholder="Last Name" />
+    </div>
+    <div class="col-md-3">
+        <input class="form-control" type="date" [(ngModel)]="model.dateOfBirth" placeholder="Date Of Birth"/>
+    </div>
+    <div class="col-md-1">
+        <div>
+            {{model.verified == null ? "Invalid" : (model.verified === true ? "Valid" : "Invalid")}}
+        </div>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-primary btn-sm" (click)="onVerifyClick(index)">
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i>&nbsp;
+            Verify
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="onDeleteClick(index)">
+            <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;
+            Delete
+        </button>
+    </div>
+</div>
+

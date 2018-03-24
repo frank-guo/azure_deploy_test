@@ -1,0 +1,21 @@
+﻿<br /><br />
+<form #customersForm="ngForm" *ngIf="customers" (ngSubmit)="onSaveClick(customersForm.form)">
+    <div class="row form-group">
+        <div class="col-md-12">
+            <h4 style="display: inline">Customers:&nbsp;&nbsp;&nbsp;</h4>
+            <button type="button" class="btn btn-primary btn-sm" (click)="onAddClick()">
+                <i class="fa fa-plus" aria-hidden="true">&nbsp;</i>
+                Add Customer
+            </button>
+            &nbsp;
+            <button type="submit" class="btn btn-primary btn-sm" [disabled]="!customersForm.form.valid">
+                <i class="fa fa-floppy-o" aria-hidden="true">&nbsp;</i>
+                Save
+            </button>
+        </div>
+    </div>
+    <customer *ngFor="let customer of customers; let i=index" [model]="customers[i]" [onDeleteClick]="onDelete"
+              [onVerifyClick]="onVerify" [index]="i">
+    </customer>
+</form>
+
