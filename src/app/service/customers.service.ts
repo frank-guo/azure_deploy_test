@@ -32,7 +32,7 @@ export class CustomersService {
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occcured', error);
+        console.log('An error occcured', error);
         return Promise.reject(error.message || error);
     }
 
